@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Qute Sample - {#insert title}No title{/}</title>
+<style>
+pre {
+    background-color:#2E3436;
+    color:white;
+}
+pre code {
+    font-size:120%;
+}
+code {
+    padding: 0.4em;
+    font-family: monospace;
+}
+.badges {
+    margin-bottom: 1em;
+}
+.label {
+    vertical-align: middle;
+    padding: .2em .6em;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Qute Samples</a>
+            </div>
+            <div class="navbar-text">
+            |
+            </div>
+            <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose Sample <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/hello">Hello</a></li>
+                    <li><a href="/greetings">Extension Methods</a></li>
+                    <li><a href="/items">User Tags</a></li>
+                    <li><a href="/when-enum">When w/ Enum</a></li>
+                    <li><a href="/switch-str">Switch w/ String</a>
+                </ul>
+             </li>
+             </ul>
+             <div class="navbar-text">
+             |
+             </div>
+             <div class="navbar-text">
+             Generated at {inject:now.format('d MMM uuuu HH:mm')}
+             </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>{#insert title /} <small>{#insert labels /}</small></h1>
+        <p class="lead">{#insert description /}</p>
+        {#insert content /}
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+</body>
+</html>

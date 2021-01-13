@@ -1,0 +1,33 @@
+{#include base}
+    {#title}Extension Methods{/title}
+    {#description}In this sample, the virtual property <code>reversed</code> is implemented via an extension method: <code>org.acme.qute.extensionmethods.TemplateExtensions#reversed()</code>.{/}
+    {#labels}
+    <span class="label label-default">expression</span>
+    <span class="label label-default">loop section</span>
+    <span class="label label-default">extension methods</span>
+    {/labels}
+    {#content}
+    
+        <label for="source">Source:</label>
+        <pre id="source"><code>{|&lt;label for=&quot;list&quot;&gt;List of Greetings&lt;/label&gt;
+&lt;ol id=&quot;list&quot;&gt;
+    {#for greeting in greetings.reversed}
+        &lt;li&gt;{greeting}&lt;/li&gt;
+    {/for}
+&lt;/ol&gt;|}</code></pre>
+
+        {#include data /}
+
+        <label for="output">Output:</label>
+        <div class="panel panel-default" id="output">
+            <div class="panel-body">
+            <label for="list">List of Greetings (in reversed order)</label>
+            <ol id="list">
+              {#for greeting in greetings.reversed}
+              <li>{greeting}</li>
+              {/for}
+            </ol>
+            </div>
+        </div>
+        
+{/include}

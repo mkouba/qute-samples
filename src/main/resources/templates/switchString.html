@@ -1,0 +1,40 @@
+{#include base}
+    {#title}Switch w/ String{/title}
+    {#description}<code>switch</code> is an alias for the <code>when</code> section that matches a tested value against all blocks sequentially until a condition is satisfied. The first matching block is executed. All other blocks are ignored.{/}
+    {#labels}
+         <span class="label label-default">expression</span>
+        <span class="label label-default">when section</span>
+    {/labels}
+    {#content}
+        
+        <label for="source">Source:</label>
+        <pre id="source"><code>{|&lt;p&gt; Hello 
+{#switch name}
+   {#case 'Edgar'}
+      man
+   {#case in 'John' 'Foo'}
+      brother
+   {#else}
+      there
+{/switch}! &lt;/p&gt;|}</code></pre>
+
+        {#include data /}
+
+        <label for="output">Output:</label>
+        <div class="panel panel-default" id="output">
+            <div class="panel-body">
+                Hello
+                {#switch name}
+                    {#case 'Edgar'}
+                        man!
+                    {#case in 'John' 'Foo'}
+                        brother!
+                    {#else}
+                        there!
+                {/switch}
+            </div>
+        </div>
+        
+        <div class="alert alert-info" role="alert">Add a param <code>name</code> to the URL to see the switch section in action, e.g. <code>/hello?name=Foo</code>.</div>
+        
+{/include}

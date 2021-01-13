@@ -1,0 +1,14 @@
+{@org.acme.qute.usertags.Item it}
+<tr>
+    <td>{count}</td>
+    <td>{it.name}</td>
+    <td>
+    {#if it.price < limit}
+        {it.price} 
+    {#else}
+        <del>{it.price}</del>
+        <strong>{it.discountedPrice(discount)}</strong>
+        (save {it.getDiscountValue(discount)})
+    {/if}
+    </div>
+</tr>
