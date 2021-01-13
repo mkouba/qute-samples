@@ -11,8 +11,8 @@ public class HelloRoute {
     @Inject
     Template hello;
 
-    @Route(path = "/")
-    @Route
+    @Route(path = "/", produces = "text/html")
+    @Route(produces = "text/html")
     String hello(@Param String name) {
         return hello.data("name", name).render();
     }
