@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.acme.qute.usertags.Item;
+import org.acme.qute.data.Item;
+import org.acme.qute.samples.ExtensionMethodsSample;
+import org.acme.qute.samples.UserTagSample;
 
 import io.quarkus.qute.TemplateExtension;
 
@@ -18,6 +20,7 @@ public class TemplateExtensions {
      * 
      * @param list
      * @return the reversed list
+     * @see ExtensionMethodsSample
      */
     static List<Object> reversed(List<Object> list) {
         List<Object> reversed = new ArrayList<>(list);
@@ -25,10 +28,24 @@ public class TemplateExtensions {
         return reversed;
     }
 
+    /**
+     * 
+     * @param item
+     * @param discount
+     * @return the discounet price
+     * @see UserTagSample
+     */
     static BigDecimal discountedPrice(Item item, int discount) {
         return item.getPrice().subtract(TemplateExtensions.getDiscountValue(item, discount)).setScale(0, RoundingMode.HALF_UP);
     }
 
+    /**
+     * 
+     * @param item
+     * @param discount
+     * @return the discount value
+     * @see UserTagSample
+     */
     static BigDecimal getDiscountValue(Item item, int discount) {
         if (discount < 0 || discount > 100) {
             throw new IllegalArgumentException("Invalid discount: " + discount);

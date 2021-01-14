@@ -1,4 +1,4 @@
-package org.acme.qute.whensection;
+package org.acme.qute.data;
 
 public enum Status {
     

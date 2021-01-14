@@ -1,0 +1,17 @@
+<table class="table table-striped" id="output">
+    <caption>List of Items</caption>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    {#for item in items}
+        <tr>
+            <td>{count}</td>
+            <td>{item.name}</td>
+            <td>{item.price}</td>
+        </tr>
+    {/for}
+</table>

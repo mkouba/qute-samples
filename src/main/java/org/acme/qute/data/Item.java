@@ -1,4 +1,4 @@
-package org.acme.qute.usertags;
+package org.acme.qute.data;
 
 import java.math.BigDecimal;
 import java.util.Objects;

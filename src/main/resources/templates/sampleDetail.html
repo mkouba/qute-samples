@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <title>Qute Sample - {#insert title}No title{/}</title>
+    <title>Qute Sample - {sample.title}</title>
 <style>
 pre {
     background-color:#2E3436;
     color:white;
+    border: 1px solid #4695EB;
 }
 pre code {
     font-size:120%;
@@ -40,11 +41,9 @@ code {
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose Sample <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="/hello">Hello Elvis</a></li>
-                    <li><a href="/greetings">Extension Methods</a></li>
-                    <li><a href="/items">User Tags</a></li>
-                    <li><a href="/when-enum">When w/ Enum</a></li>
-                    <li><a href="/switch-str">Switch w/ String</a>
+                    {#for sample in inject:samples}
+                    <li><a href="{sample.path}">{count}.  {sample.title} {#sampleDiffLabel sample.difficulty /}</a></li>
+                    {/for}
                 </ul>
              </li>
              </ul>
@@ -58,9 +57,26 @@ code {
     </nav>
 
     <div class="container">
-        <h1>{#insert title /} <small>{#insert labels /}</small></h1>
-        <p class="lead">{#insert description /}</p>
-        {#insert content /}
+        <h1>{sample.title} <small>{#sampleDiffLabel sample.difficulty /} {#each sample.labels}<span class="label label-default">{it}</span> {/each}</small></h1>
+        <p class="lead">{sample.description.raw}</p>
+        
+        <!-- Snippet source -->
+        <label for="source">Source of the snippet <code>src/main/resources/templates/snippets/{sample.snippetName}</code>:</label>
+        <pre id="source"><code>{source}</code></pre>
+        
+        <!-- Output -->
+        <label for="output">Output:</label>
+        <div class="panel panel-default" id="output">
+            <div class="panel-body">
+                <p>{output.raw}</p>
+            </div>
+        </div>
+        
+        <!-- Infos -->
+        {#for info in sample.infos}
+        <div class="alert alert-info" role="alert">{info.raw}</div>
+        {/for}
+        
     </div>
     
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
