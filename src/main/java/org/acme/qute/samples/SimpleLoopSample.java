@@ -24,7 +24,7 @@ public class SimpleLoopSample implements Sample {
 
     @Override
     public String getDescription() {
-        return "The loop section makes it possible to iterate over an instance of <code>Iterable</code>, <code>Map</code>'s entry set, <code>Stream</code> and an <code>Integer</code>.  It has two flavors. In this sample, we use the <code>for</code>-style.";
+        return "The loop section makes it possible to iterate over an instance of <code>Iterable</code>, <code>Map</code>'s entry set, <code>Stream</code> and an <code>Integer</code>.  It has two flavors. In this sample, we use the <code>for</code>-style loop.";
     }
 
     @Override

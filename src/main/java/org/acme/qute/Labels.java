@@ -8,6 +8,7 @@ public final class Labels {
     public static final String EXTENSION_METHODS = "extension methods";
     public static final String USER_TAGS = "user tags";
     public static final String WHEN = "when section";
+    public static final String IF = "if section";
 
     private Labels() {
     }

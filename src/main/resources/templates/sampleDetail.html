@@ -26,20 +26,25 @@ code {
     vertical-align: middle;
     padding: .2em .6em;
 }
+.navbar {
+    font-size: 1.5em;
+}
 </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Qute Samples</a>
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="quarkus_logo_horizontal_rgb_200px_reverse.png">
+                </a>
             </div>
             <div class="navbar-text">
             |
             </div>
             <ul class="nav navbar-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Choose Sample <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Choose Sample <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     {#for sample in inject:samples}
                     <li><a href="{sample.path}">{count}.  {sample.title} {#sampleDiffLabel sample.difficulty /}</a></li>
@@ -61,11 +66,15 @@ code {
         <p class="lead">{sample.description.raw}</p>
         
         <!-- Snippet source -->
-        <label for="source">Source of the snippet <code>src/main/resources/templates/snippets/{sample.snippetName}</code>:</label>
-        <pre id="source"><code>{source}</code></pre>
+        <label for="source"><h2>Source of <code>src/main/resources/templates/snippets/{sample.snippetName}</code>:</h2></label>
+        <div class="panel panel-default" id="source">
+            <div class="panel-body">
+                <pre id="source"><code>{source}</code></pre>
+            </div>
+        </div>
         
         <!-- Output -->
-        <label for="output">Output:</label>
+        <label for="output"><h2>Output:</h2></label>
         <div class="panel panel-default" id="output">
             <div class="panel-body">
                 <p>{output.raw}</p>

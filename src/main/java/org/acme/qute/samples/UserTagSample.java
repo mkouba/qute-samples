@@ -51,7 +51,7 @@ public class UserTagSample implements Sample {
 
     @Override
     public Iterable<String> getLabels() {
-        return List.of(Labels.EXPRESSIONS, Labels.LOOP, Labels.USER_TAGS);
+        return List.of(Labels.EXPRESSIONS, Labels.LOOP, Labels.IF, Labels.USER_TAGS);
     }
 
     @Override

@@ -16,7 +16,7 @@ public class WhenStringSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "When Section with String";
+        return "When with String";
     }
 
     @Override

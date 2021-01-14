@@ -17,7 +17,7 @@ public class WhenEnumSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "When Section with Enum";
+        return "When with Enum";
     }
 
     @Override

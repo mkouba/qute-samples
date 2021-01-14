@@ -21,4 +21,6 @@ public class CheckedTemplates {
     
     public static native TemplateInstance simpleLoop(List<Item> items);
     
+    public static native TemplateInstance simpleIf(Item item);
+    
 }
