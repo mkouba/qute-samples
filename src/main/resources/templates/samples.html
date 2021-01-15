@@ -1,7 +1,9 @@
 {#include base}
   {#title}Qute Sample - Index{/title}
   {#content}
-  <h1>Samples</h1>
+  <div class="jumbotron">
+    <h1>Samples</small></h1>
+  </div>
   <ul class="list-group list-group-flush">
     {#for sample in inject:samples}
     <li class="list-group-item">{count}. <a href="{sample.path}">{sample.title}</a> {#sampleDiffLabel sample.difficulty /}</li>
