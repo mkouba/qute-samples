@@ -43,10 +43,11 @@ public class SamplesProducer {
         int idx = 0;
         for (Sample sample : samples) {
             Handler<RoutingContext> handler = ctx -> {
+                Template descriptionTemplate = engine.getTemplate("descriptions/" + sample.getSnippetName());
                 ctx.response().setStatusCode(200)
                         .end(sampleDetail
                                 .data("sample", sample)
-                                .data("description", engine.getTemplate("descriptions/" + sample.getSnippetName()).render())
+                                .data("description", descriptionTemplate != null ? descriptionTemplate.render() : "")
                                 .data("output", sample.getSnippetInstance(ctx.request().params()).render())
                                 .data("source", Samples.loadSource(sample))
                                 .render());
