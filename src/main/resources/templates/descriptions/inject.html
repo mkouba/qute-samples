@@ -1,0 +1,4 @@
+Any CDI bean annotated with <code>@Named</code> can be referenced in an expression in a template through the <code>inject</code> namespace.
+In this sample, we're going to inject two beans.
+<code>\{inject:injectSample}</code> is backed by the <code>org.acme.qute.samples.InjectSample</code> bean and
+<code>\{inject:now}</code> receives a <code>java.time.LocalDateTime</code> instance produced by the <code>InjectSample.now()</code> producer method.

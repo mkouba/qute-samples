@@ -1,6 +1,5 @@
 package org.acme.qute;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -33,14 +32,12 @@ public class SamplesProducer {
         return List.copyOf(samples);
     }
 
-    @Named("now")
-    @Produces
-    LocalDateTime now() {
-        return LocalDateTime.now();
-    }
-
     void registerRoutes(@Observes Router router, List<Sample> samples, Engine engine, Template sampleDetail) {
-        int idx = 0;
+        router.route("/").produces("text/html").handler(ctx -> {
+            Template index = engine.getTemplate("samples");
+            ctx.response().setStatusCode(200)
+                    .end(index.render());
+        });
         for (Sample sample : samples) {
             Handler<RoutingContext> handler = ctx -> {
                 Template descriptionTemplate = engine.getTemplate("descriptions/" + sample.getSnippetName());
@@ -52,11 +49,6 @@ public class SamplesProducer {
                                 .data("source", Samples.loadSource(sample))
                                 .render());
             };
-            idx++;
-            if (idx == 1) {
-                // The sample with highest priority is also served from the root
-                router.route("/").produces("text/html").handler(handler);
-            }
             router.route(sample.getPath()).produces("text/html").handler(handler);
         }
     }

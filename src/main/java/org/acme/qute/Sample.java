@@ -2,6 +2,9 @@ package org.acme.qute;
 
 import java.util.Collections;
 
+import io.quarkus.arc.Arc;
+import io.quarkus.qute.Engine;
+import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 import io.vertx.core.MultiMap;
 
@@ -22,7 +25,10 @@ public interface Sample {
         return snippet.startsWith("/") ? snippet : "/" + snippet;
     }
 
-    TemplateInstance getSnippetInstance(MultiMap params);
+    default TemplateInstance getSnippetInstance(MultiMap params) {
+        Template template = Arc.container().instance(Engine.class).get().getTemplate("snippets/" + getSnippetName());
+        return template.instance();
+    }
 
     default Difficulty getDifficulty() {
         return Difficulty.BEGINNER;
