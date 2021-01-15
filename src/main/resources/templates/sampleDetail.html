@@ -1,5 +1,5 @@
 {#include base}
-  {#title}Qute Sample - Index{/title}
+  {#title}Qute Sample - {sample.title}{/title}
   {#content}
         <div class="jumbotron">
             <h1>{sample.title} <small>{#sampleDiffLabel sample.difficulty /}</small></h1>
@@ -14,7 +14,7 @@
         <h2>Output:</h2>
         <div class="card" id="output">
             <div class="card-body">
-                <p>{output.raw}</p>
+                {output.raw}
             </div>
         </div>
         
