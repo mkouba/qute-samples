@@ -9,15 +9,9 @@ public interface Sample {
 
     String getTitle();
 
-    default String getDescription() {
-        return "";
+    default String getSnippetName() {
+        return Samples.getSnippetName(getClass().getSimpleName());
     }
-
-    default Iterable<String> getLabels() {
-        return Collections.emptyList();
-    }
-
-    String getSnippetName();
 
     default String getPath() {
         // hello.html -> /hello
@@ -37,7 +31,7 @@ public interface Sample {
     default int getPriority() {
         return 1;
     }
-    
+
     default Iterable<String> getInfos() {
         return Collections.emptyList();
     }
@@ -47,7 +41,7 @@ public interface Sample {
         BEGINNER,
         ADVANCED,
         EXPERT;
-        
+
     }
 
 }

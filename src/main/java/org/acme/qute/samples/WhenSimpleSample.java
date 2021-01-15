@@ -1,6 +1,6 @@
 package org.acme.qute.samples;
 
-import java.util.Arrays;
+import java.util.List;
 
 import javax.inject.Singleton;
 
@@ -11,21 +11,22 @@ import io.quarkus.qute.TemplateInstance;
 import io.vertx.core.MultiMap;
 
 @Singleton
-public class ExtensionMethodsSample implements Sample {
+public class WhenSimpleSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "Extension Methods";
+        return "Simple When";
     }
 
     @Override
     public TemplateInstance getSnippetInstance(MultiMap params) {
-        return CheckedTemplates.extensionMethods(Arrays.asList("Hello", "Tschüss", "Ahoj"));
+        return CheckedTemplates.whenSimple(params.get("name"));
     }
 
     @Override
-    public Difficulty getDifficulty() {
-        return Difficulty.ADVANCED;
+    public Iterable<String> getInfos() {
+        return List.of(
+                "Add the <code>name</code> query param to the URL to see the switch section in action, e.g. <code>/switch-str?name=Foo</code>.");
     }
 
 }

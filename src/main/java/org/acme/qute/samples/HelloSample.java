@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.inject.Singleton;
 
-import org.acme.qute.Labels;
 import org.acme.qute.Sample;
 
 import io.quarkus.qute.Template;
@@ -21,21 +20,6 @@ public class HelloSample implements Sample {
     @Override
     public String getTitle() {
         return "Hello Elvis";
-    }
-
-    @Override
-    public String getDescription() {
-        return "This sample shows a simple expression with an elvis operator <code>?:</code>.";
-    }
-
-    @Override
-    public Iterable<String> getLabels() {
-        return List.of(Labels.EXPRESSIONS, Labels.ELVIS);
-    }
-
-    @Override
-    public String getSnippetName() {
-        return "hello.html";
     }
 
     @Override

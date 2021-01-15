@@ -1,0 +1,5 @@
+The <code>\{#if}</code> section can be used to control the flow of your template. The simplest possible version accepts a single parameter and renders the content if the condition is not <code>falsy</code>.
+However, you can also use operators: <code>\{#if item.age > 10}</code>, 
+multiple conditions: <code>\{#if item.age > 10 && item.price > 500}</code> 
+and the precedence rules can be overridden by parentheses: <code>\{#if (item.age > 10 || item.price > 500) && user.loggedIn}</code>.
+You can also add any number of <code>\{#else}</code> blocks.

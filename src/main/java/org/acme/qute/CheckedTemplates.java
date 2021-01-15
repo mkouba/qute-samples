@@ -12,15 +12,15 @@ import io.quarkus.qute.api.CheckedTemplate;
 public class CheckedTemplates {
 
     public static native TemplateInstance whenEnum(Status status);
-    
-    public static native TemplateInstance switchString(String name);
 
-    public static native TemplateInstance items(List<Item> items);
+    public static native TemplateInstance whenSimple(String name);
 
-    public static native TemplateInstance greetings(List<String> greetings);
-    
-    public static native TemplateInstance simpleLoop(List<Item> items);
-    
-    public static native TemplateInstance simpleIf(Item item);
-    
+    public static native TemplateInstance userTag(List<Item> items);
+
+    public static native TemplateInstance extensionMethods(List<String> greetings);
+
+    public static native TemplateInstance loopSimple(List<Item> items);
+
+    public static native TemplateInstance ifSimple(Item item);
+
 }
