@@ -2,6 +2,7 @@ package org.acme.qute.samples;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Singleton;
@@ -26,6 +27,11 @@ public class UserTagSample implements Sample {
     @Override
     public String getTitle() {
         return "User-defined Tags";
+    }
+    
+    @Override
+    public List<String> getAdditionalSnippetNames() {
+        return Collections.singletonList("tags/itemDetail.html");
     }
 
     @Override

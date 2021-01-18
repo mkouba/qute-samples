@@ -1,6 +1,7 @@
 package org.acme.qute;
 
 import java.util.Collections;
+import java.util.List;
 
 import io.quarkus.arc.Arc;
 import io.quarkus.qute.Engine;
@@ -14,6 +15,10 @@ public interface Sample {
 
     default String getSnippetName() {
         return Samples.getSnippetName(getClass().getSimpleName());
+    }
+    
+    default List<String> getAdditionalSnippetNames() {
+        return Collections.emptyList();
     }
 
     default String getPath() {

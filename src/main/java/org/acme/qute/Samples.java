@@ -22,15 +22,18 @@ final class Samples {
         return sampleClazzName + ".html";
     }
 
-    static String loadSource(Sample sample) {
+    static String loadSource(String snippetName) {
         URL resource = null;
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
         if (cl == null) {
             cl = EngineProducer.class.getClassLoader();
         }
-        resource = cl.getResource("templates/snippets/" + sample.getSnippetName());
+        if (!snippetName.contains("/")) {
+            snippetName = "snippets/" + snippetName;
+        }
+        resource = cl.getResource("templates/" + snippetName);
         if (resource == null) {
-            throw new IllegalStateException("Snippet source not found: " + sample.getSnippetName());
+            throw new IllegalStateException("Snippet source not found: " + snippetName);
         }
 
         final char[] buffer = new char[1024 * 8];

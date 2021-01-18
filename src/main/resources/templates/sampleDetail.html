@@ -6,12 +6,19 @@
             <p>{description.raw}</p>
         </div>
         
-        <!-- Snippet source -->
-        <h2>Source of <code>src/main/resources/templates/snippets/{sample.snippetName}</code>:</h2>
-        <pre id="source"><code class="html">{source}</code></pre>
+        <!-- Snippet sources -->
+        <h2>Sources</h2>
+        <h3><code>src/main/resources/templates/snippets/{sample.snippetName}</code>:</h2>
+        <pre id="source"><code class="html">{sample.source}</code></pre>
         
-        <!-- Output -->
-        <h2>Output:</h2>
+        {#if sample.additionalSnippetNames}
+            {#each sample.additionalSnippetNames}
+            <h3><code>src/main/resources/templates/snippets/{it}</code>:</h3>
+            <pre id="source"><code class="html">{sample.getSource(it)}</code></pre>
+            {/each}
+        {/if}
+        
+        <h2>Output</h2>
         <div class="card" id="output">
             <div class="card-body">
                 {output.raw}

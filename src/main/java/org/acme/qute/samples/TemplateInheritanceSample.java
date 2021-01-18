@@ -8,28 +8,26 @@ import javax.inject.Singleton;
 import org.acme.qute.Sample;
 
 @Singleton
-public class IncludeSample implements Sample {
+public class TemplateInheritanceSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "Simple Include";
-    }
-    
-    @Override
-    public List<String> getAdditionalSnippetNames() {
-        return Collections.singletonList("hello.html");
+        return "Template Inheritance";
     }
 
-    
+    @Override
+    public List<String> getAdditionalSnippetNames() {
+        return Collections.singletonList("base.html");
+    }
+
     public Difficulty getDifficulty() {
         return Difficulty.ADVANCED;
     }
 
     @Override
     public int getPriority() {
-        // this sample should go before template inheritance
-        return 0;
+        // this sample should go after include
+        return -1;
     }
-    
 
 }
