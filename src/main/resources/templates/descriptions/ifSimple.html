@@ -1,5 +1,10 @@
-The <code>\{#if}</code> section can be used to control the flow of your template. The simplest possible version accepts a single parameter and renders the content if the condition is not <code>falsy</code>.
-However, you can also use operators: <code>\{#if item.age > 10}</code>, 
-multiple conditions: <code>\{#if item.age > 10 && item.price > 500}</code> 
-and the precedence rules can be overridden by parentheses: <code>\{#if (item.age > 10 || item.price > 500) && user.loggedIn}</code>.
-You can also add any number of <code>\{#else}</code> blocks.
+The <code>\{#if}</code> section is a basic control flow construct.
+The simplest possible version accepts a single parameter and renders the content if the condition is not <code>falsy</code>, 
+i.e. if the value is not <code>null</code>, <code>false</code>, an empty collection, an empty map, an empty array, an empty string/char sequence or a number equal to zero.
+However, you can also use:
+<ul>
+<li>operators, e.g.: <code>\{#if item.age > 10}</code>,</li>
+<li>multiple conditions, e.g.: <code>\{#if item.age > 10 && item.price > 500}</code>,</li>
+<li>overridde the precedence rules by parentheses, e.g.: <code>\{#if (item.age > 10 || item.price > 500) && user.loggedIn}</code>,</li>
+<li>add any number of <code>\{#else}</code> blocks.</li>
+</ul>

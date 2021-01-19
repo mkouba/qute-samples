@@ -12,7 +12,7 @@ public class IncludeSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "Simple Include";
+        return "Include Template";
     }
     
     @Override

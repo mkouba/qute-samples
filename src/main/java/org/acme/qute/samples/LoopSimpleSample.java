@@ -18,7 +18,7 @@ public class LoopSimpleSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "Simple Loop";
+        return "For-Each Loop";
     }
 
     @Override

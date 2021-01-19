@@ -17,7 +17,7 @@ public class IfSimpleSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "Simple If";
+        return "If-Else";
     }
 
     @Override
@@ -35,7 +35,12 @@ public class IfSimpleSample implements Sample {
     @Override
     public Iterable<String> getInfos() {
         return List.of(
-                "Add the <code>price</code> query param to the URL to override the price, e.g. <code>?price=20</code>.");
+                "You can add the <code>price</code> query param to the URL to override the price, e.g. <code>?price=20</code>.");
+    }
+    
+    @Override
+    public int getPriority() {
+        return 9;
     }
 
 }

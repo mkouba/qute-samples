@@ -1,0 +1,8 @@
+<p>
+{#let val=5 foo='Value'}
+  {foo}: 
+  {#for i in val}
+    {i}{#if hasNext}, {/}
+  {/for}
+{/let}
+</p>

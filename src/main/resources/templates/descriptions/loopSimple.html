@@ -1,2 +1,12 @@
-The loop section makes it possible to iterate over instances of <code>Iterable</code>, <code>Map</code>'s entry set, <code>Stream</code> and an <code>Integer</code>.  
-It has two flavors. In this sample, we use the <code>\{#for}</code> style loop.
+The <code>\{#for}</code> section makes it possible to iterate over instances of <code>Iterable</code>, <code>Map</code>'s entry set, <code>Stream</code> and an <code>Integer</code>.  
+It has two forms. In this sample, we use the <code>\{#for}</code> style loop and specify the element alias used inside the loop.
+You can also use a simplified version with <code>\{#each}</code> and implicit alias <code>\{it}</code>: <code>\{#each items}\{it.name}\{/each}</code>
+It’s also possible to access the iteration metadata inside the loop:
+<ul>
+<li><code>\{count}</code> - index</li>
+<li><code>\{index}</code> - zero-based index</li>
+<li><code>\{hasNext}</code> - <code>true</code> if the iteration has more elements</li>
+<li><code>\{odd}</code> - <code>true</code> if the zero-based index is odd</li>
+<li><code>\{even}</code> - <code>true</code> if the zero-based index is even</li>
+</ul>
+ 

@@ -15,7 +15,7 @@ public class WhenSimpleSample implements Sample {
 
     @Override
     public String getTitle() {
-        return "Simple When";
+        return "When";
     }
 
     @Override
@@ -26,7 +26,7 @@ public class WhenSimpleSample implements Sample {
     @Override
     public Iterable<String> getInfos() {
         return List.of(
-                "Add the <code>name</code> query param to the URL to see the switch section in action, e.g. <code>/switch-str?name=Foo</code>.");
+                "You can add the <code>name</code> query param to the URL to see the switch section in action, e.g. <code>?name=Foo</code>.");
     }
 
 }

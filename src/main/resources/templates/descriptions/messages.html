@@ -1,0 +1,5 @@
+The basic idea is that every message is potentially a very simple template. 
+In order to prevent type errors a message is defined as an annotated method of a message bundle interface. 
+Quarkus generates the message bundle implementation at build time. 
+Subsequently, the bundles can be referenced in the templates via the message bundle namespace, e.g. <code>\{msg:hello_name('Lucie')}</code>.
+In this sample, the messages are defined in the <code>org.acme.qute.data.AppMessages</code> message bundle interface and localized files: <code>/qute-samples/src/main/resources/messages/msg_cs.properties</code> and <code>/qute-samples/src/main/resources/messages/msg_de.properties</code>.

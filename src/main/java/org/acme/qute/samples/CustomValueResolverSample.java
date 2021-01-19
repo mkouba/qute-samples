@@ -42,11 +42,17 @@ public class CustomValueResolverSample implements Sample {
     public Difficulty getDifficulty() {
         return Difficulty.EXPERT;
     }
-    
+
+    @Override
+    public int getPriority() {
+        // always last
+        return Integer.MIN_VALUE;
+    }
+
     @Override
     public Iterable<String> getInfos() {
         return List.of(
-                "Add the <code>number</code> query param to the URL to specify the number value, e.g. <code>?number=20</code>.");
+                "You can add the <code>number</code> query param to the URL to specify the number value, e.g. <code>?number=20</code>.");
     }
 
 }

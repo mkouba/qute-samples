@@ -30,7 +30,7 @@ public class HelloSample implements Sample {
     @Override
     public Iterable<String> getInfos() {
         return List.of(
-                "Add the <code>name</code> query param to the URL to see the elvis operator in action, e.g. <code>?name=Foo</code>.");
+                "You can add the <code>name</code> query param to the URL to see the elvis operator in action, e.g. <code>?name=Foo</code>.");
     }
 
     @Override
