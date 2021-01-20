@@ -22,13 +22,12 @@ public class IfSimpleSample implements Sample {
 
     @Override
     public TemplateInstance getSnippetInstance(MultiMap params) {
-        Item item;
+        String name = "Log";
         String price = params.get("price");
-        if (price != null) {
-            item = new Item(new BigDecimal(price), "log");
-        } else {
-            item = new Item(BigDecimal.TEN, "log");
+        if (price == null) {
+            price = "15";
         }
+        Item item = new Item(new BigDecimal(price), name);
         return CheckedTemplates.ifSimple(item);
     }
 
@@ -37,7 +36,7 @@ public class IfSimpleSample implements Sample {
         return List.of(
                 "You can add the <code>price</code> query param to the URL to override the price, e.g. <code>?price=20</code>.");
     }
-    
+
     @Override
     public int getPriority() {
         return 9;

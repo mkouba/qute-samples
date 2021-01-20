@@ -47,6 +47,10 @@ public interface Sample {
         return Collections.emptyList();
     }
 
+    default String getClassFilePath() {
+        return "src/main/java/" + getClass().getName().replace(".", "/") + ".java";
+    }
+    
     enum Difficulty {
 
         BEGINNER,

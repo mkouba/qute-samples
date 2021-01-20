@@ -62,6 +62,11 @@ h3 {
                   </li>
             </ul>
         </div>
+        <div class="navbar-text">
+            {#if sample}
+            Sample Class: <code>{sample.classFilePath}</code>
+            {/if}
+        </div>
     </nav>
 
     <div class="container">
