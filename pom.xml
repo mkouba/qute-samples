@@ -37,6 +37,8 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-vertx-web</artifactId>
         </dependency>
+        
+        <!-- Test dependencies -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
