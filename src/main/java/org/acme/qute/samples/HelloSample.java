@@ -6,15 +6,15 @@ import javax.inject.Singleton;
 
 import org.acme.qute.Sample;
 
+import io.quarkus.qute.Location;
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
-import io.quarkus.qute.api.ResourcePath;
 import io.vertx.core.MultiMap;
 
 @Singleton
 public class HelloSample implements Sample {
 
-    @ResourcePath("snippets/hello")
+    @Location("snippets/hello")
     Template hello;
 
     @Override

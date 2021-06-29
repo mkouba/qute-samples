@@ -28,7 +28,7 @@ public class UserTagSample implements Sample {
     public String getTitle() {
         return "User-defined Tags";
     }
-    
+
     @Override
     public List<String> getAdditionalSnippetNames() {
         return Collections.singletonList("tags/itemDetail.html");
@@ -40,8 +40,7 @@ public class UserTagSample implements Sample {
         items.add(new Item(new BigDecimal(10), "Apple"));
         items.add(new Item(new BigDecimal(16), "Pear"));
         items.add(new Item(new BigDecimal(30), "Orange"));
-        return CheckedTemplates.userTag(items).data("discount", (discount < 0 || discount > 100) ? 10 : discount)
-                .data("discountLimit", discountPriceLimit);
+        return CheckedTemplates.userTag(items, (discount < 0 || discount > 100) ? 10 : discount, discountPriceLimit);
     }
 
     @Override
